@@ -3,7 +3,7 @@ clear
 while true; do
 [[ $EUID != 0 ]] && echo "当前非ROOT用户" && exit 0
 # 检查应用是否已安装
-    path=./root.apk
+    path=/data/local/tmp/tmp.apk
     echo -e "你就想安装/更新谁？\n--------\n1.Magisk \n\n2.Kitsune Mask\n---------" && read mk
     case ${mk} in
     
@@ -48,6 +48,7 @@ while true; do
         if [ $? -eq 0 ]; then  
         	pm install $path >/dev/null 2>&1
 		     if [ $? -eq 0 ]; then  
+		          mv $path ./
                   echo "$name安装成功,rec卡刷包在脚本目录"
                 else
                   echo "$name安装失败"
@@ -59,6 +60,5 @@ while true; do
         fi
   fi
   echo -e "\n---------------\n"
-  rm wget-log
 done
   exit 0
