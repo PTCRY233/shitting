@@ -65,7 +65,7 @@ pid2=$(ps -A | grep $app2 | awk '{print $2}')
      else
         echo "Sudachi没有运行"
      fi
-           wget --no-check-certificate -O $path https://gh.ddlc.top/https://github.com/sudachi-emu/sudachi/releases/latest/download/app-ea-release.apk>/dev/null 2>&1
+           wget --no-check-certificate -O $path https://gh.ddlc.top/https://github.com/sudachi-emu/sudachi/releases/latest/download/sudachi-ea-release.apk>/dev/null 2>&1
         # 检查下载是否成功
            if [ $? -eq 0 ]; then
             pm install $path>/dev/null 2>&1
@@ -83,7 +83,7 @@ pid2=$(ps -A | grep $app2 | awk '{print $2}')
      fi
   else
         echo "Sudachi未安装，尝试安装"    
-        wget --no-check-certificate -O $path https://gh.ddlc.top/https://github.com/sudachi-emu/sudachi/releases/latest/download/app-ea-release.apk>/dev/null 2>&1
+        wget --no-check-certificate -O $path https://gh.ddlc.top/https://github.com/sudachi-emu/sudachi/releases/latest/download/sudachi-ea-release.apk>/dev/null 2>&1
         # 检查下载是否成功
         if [ $? -eq 0 ]; then  
         	pm install $path>/dev/null 2>&1
@@ -98,5 +98,5 @@ pid2=$(ps -A | grep $app2 | awk '{print $2}')
             exit 1
         fi
   fi
-  rm wget-log
+ 
   exit 0

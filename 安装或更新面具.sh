@@ -7,7 +7,7 @@ while true; do
     echo -e "你就想安装/更新谁？\n--------\n1.Magisk \n\n2.Kitsune Mask\n---------" && read mk
     case ${mk} in
     
-        1) app=com.topjohnwu.magisk && res=topjohnwu/Magisk && link="https://gh.ddlc.top/https://gh.ddlc.top/https://github.com/${res}/releases/latest/download/Magisk-$(curl -Ls 'https://api.github.com/repos/${res}/releases/latest' | grep 'tag_name' | sed -E 's/.*"([^"]+)".*/\1/').apk" && version1=$(curl -Ls 'https://api.github.com/repos/topjohnwu/Magisk/releases/latest' | grep 'tag_name' | sed -E 's/.*"([^"]+)".*/\1/') && version1=${version1//[v]/} && clear && name="Magisk" ;;
+        1) app=com.topjohnwu.magisk && res=topjohnwu/Magisk && link="https://gh.ddlc.top/https://github.com/${res}/releases/latest/download/Magisk-$(curl -Ls 'https://api.github.com/repos/topjohnwu/Magisk/releases/latest' | grep 'tag_name' | sed -E 's/.*"([^"]+)".*/\1/').apk" && version1=$(curl -Ls 'https://api.github.com/repos/topjohnwu/Magisk/releases/latest' | grep 'tag_name' | sed -E 's/.*"([^"]+)".*/\1/') && version1=${version1//[v]/} && clear && name="Magisk" ;;
         
         2) app=io.github.huskydg.magisk && res=HuskyDG/magisk-files && link=https://huskydg.github.io/magisk-files/app-release.apk && name="Kitsune Mask" && clear && echo -e "\n由于github原因，找不到狐狸面具的最新版本号的api，故无法检测\n";;
         
